@@ -21,6 +21,9 @@ class _DismissibleExampleState extends State<DismissibleExample> {
         return Dismissible(
           background: Container(color: Colors.green),
           key: ValueKey<int>(items[index]),
+          direction: DismissDirection.horizontal,
+          secondaryBackground: Container(color: Colors.red),
+          behavior: HitTestBehavior.opaque,
           onDismissed: (DismissDirection direction) {
             if (direction == DismissDirection.startToEnd) {
               // start from the left to the right
