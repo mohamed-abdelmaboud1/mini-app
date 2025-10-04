@@ -6,6 +6,7 @@ import 'package:mini_app/features/home/ui/views/drag_target_example.dart';
 import 'package:mini_app/features/home/ui/views/draggable_example.dart';
 import 'package:mini_app/features/home/ui/views/fractionally_sized_box_example.dart';
 import 'package:mini_app/features/home/ui/views/hero_example.dart';
+import 'package:mini_app/features/home/ui/views/limited_box_example.dart';
 
 import 'dismissible_example.dart';
 
@@ -44,6 +45,16 @@ class HomeView extends StatelessWidget {
               BaselineExample(),
               const SizedBox(height: 20),
               FractionallySizedBoxExample(),
+              const SizedBox(height: 20),
+              LimitedBoxExample(),
+              const SizedBox(height: 20),
+              OffstageExample(),
+              const SizedBox(height: 20),
+
+              Text(
+                'End of Examples',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
             ],
           ),
         ),

@@ -69,3 +69,44 @@ class AbsorbPointerExample extends StatelessWidget {
     );
   }
 }
+
+class OffstageExample extends StatefulWidget {
+  const OffstageExample({super.key});
+
+  @override
+  State<OffstageExample> createState() => _OffstageExampleState();
+}
+
+class _OffstageExampleState extends State<OffstageExample> {
+  bool isHidden = true;
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Visibility(
+          visible: isHidden,
+          //! maintainSize: true, if you want to keep the size even when hidden
+          //! maintainState: true,
+          //! maintainAnimation: true,
+          replacement: Text(
+            "I'm hidden",
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+          child: Container(
+            color: Colors.blue.withValues(alpha: 0.3),
+            width: 200,
+            height: 500,
+          ),
+        ),
+        ElevatedButton(
+          onPressed: () {
+            setState(() {
+              isHidden = !isHidden;
+            });
+          },
+          child: Text(isHidden ? "Show" : "Hide"),
+        ),
+      ],
+    );
+  }
+}
